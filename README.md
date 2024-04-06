@@ -14,4 +14,16 @@ Checkpoint doc:
 [https://docs.google.com/document/d/1ENQ43E5LHeky2Nc-gqrUHDR-GbNUQfpfMnq47S-j0jo/edit#heading=h.wgl2s2eniag8]
 
 
+### Development
 
+Using virtual environment is recommended. But its slow afffff in venv. AAAAA
+
+```bash
+python3.11 -m venv .venv
+
+# activate venv
+source .venv/bin/activate
+
+# install requirements
+pip install -r requirements.txt
+```

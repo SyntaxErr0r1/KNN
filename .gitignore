@@ -1,5 +1,10 @@
 *.env
 
+*.venv
+
+# used for sumeczech data files
+*.jsonl
+
 # python cache
 __pycache__/
 
