@@ -2,3 +2,6 @@
 
 # python cache
 __pycache__/
+
+*.tar.gz
+sumeczech-1.0/
