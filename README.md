@@ -32,9 +32,8 @@ pip install -r requirements.txt
 Tool for creating the dataset 
 
 ### Setup
-- create .env file with following variables
-- environment variables for using openai API
-- install requirements
+- create `.env` file based on [example.env](example.env)
+- install requirements `pip install -r requirements.txt`
 - extract the ˙`sumeczech` dataset into `./sumeczech-1.0/`
 
 
