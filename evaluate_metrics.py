@@ -35,7 +35,12 @@ class BertScoreEvaluator(BaseEvaluator):
         self.lang = lang
 
     def evaluate(self, predictions, references):
-        return self.metric_fn.compute(predictions=predictions, references=references, lang=self.lang)
+        scores = self.metric_fn.compute(predictions=predictions, references=references, lang=self.lang)
+        # average scores for precision, recall, f1
+        scores["precision"] = sum(scores["precision"]) / len(scores["precision"])
+        scores["recall"] = sum(scores["recall"]) / len(scores["recall"])
+        scores["f1"] = sum(scores["f1"]) / len(scores["f1"])
+        return scores
 
 class BleuEvaluator(BaseEvaluator):
     def __init__(self):
@@ -44,12 +49,6 @@ class BleuEvaluator(BaseEvaluator):
     def evaluate(self, predictions, references):
         return self.metric_fn.compute(predictions=predictions, references=references)
 
-# class BleuRTEvaluator(BaseEvaluator):
-#     def __init__(self):
-#         super().__init__("bleurt", eval_load("bleurt", module_type="metric"))
-
-#     def evaluate(self, predictions, references):
-#         return self.metric_fn.compute(predictions=predictions, references=references)
     
 class MeteorEvaluator(BaseEvaluator):
     def __init__(self):
@@ -62,9 +61,9 @@ class MeteorEvaluator(BaseEvaluator):
 def get_all_evaluators() -> List[BaseEvaluator]:
     evaluators = [
         RougeRawEvaluator(),
-        # RougeEvaluator(),
-        # BertScoreEvaluator(),
-        # BleuEvaluator(),
-        # # BleuRTEvaluator()
+        RougeEvaluator(),
+        BertScoreEvaluator(),
+        BleuEvaluator(),
+        MeteorEvaluator()
     ]
     return evaluators
