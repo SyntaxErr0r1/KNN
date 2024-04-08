@@ -5,11 +5,16 @@ from torch.utils.data import Dataset, DataLoader
 from evaluate_metrics import BaseEvaluator, get_all_evaluators
 
 class SummaryDatasetSumeCzech(Dataset):
-    def __init__(self, data_paths):
+    def __init__(self, data_path: str):
+        """
+        Args:
+            data_path (str): Path to the data file
+        """
         self.data = []
-        for path in data_paths:
-            with open(path, "r", encoding="utf-8") as f:
-                self.data.extend([json.loads(line) for line in f])
+        with open(data_path, "r") as f:
+            for line in f:
+                self.data.append(json.loads(line))
+        
 
     def __len__(self):
         return len(self.data)
