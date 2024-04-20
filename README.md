@@ -41,3 +41,18 @@ Tool for creating the dataset
 - `python dataset_tool.py <input_json_file> <output_json_file>` 
 - where `<input_json_file>` is the file with the data in the `.jsonl` format of the `SumeCzech` dataset
 - and `<output_json_file>` is the file where the output will be saved in the `.jsonl` format
+
+
+
+### Metacentrum
+
+- ideálne nastavený login cez SSH klúč
+- pripojenie s X11 forwarding
+```bash
+ssh -X zefron6.cerit-sc.cz
+```
+
+- qsub príkaz
+```bash
+qsub ./Jupyter_Cuda80_KNN.sh
+```
