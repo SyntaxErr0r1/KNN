@@ -3,7 +3,7 @@
 *.venv
 
 # used for sumeczech data files
-*.jsonl
+data/sumeczech/*.jsonl
 
 # python cache
 __pycache__/
