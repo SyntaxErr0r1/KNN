@@ -95,7 +95,7 @@ chat_abstract_to_headline_3shot = [
 - version of Rouge metric that does not use stemming or stop words removal
 - used in SumeCzech paper.
 
->**NOTE**: using high values from rougeraw metric 
+>!**NOTE**: using high values from rougeraw metric 
 This refers to the ROUGE-RAW score when the target summary length is set to the 90th percentile of the reference summary lengths. 
 
 ```
