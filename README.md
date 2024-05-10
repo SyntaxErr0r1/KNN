@@ -5,6 +5,11 @@ This is the repository for KNN project at VUT FIT.
 As of now it consists of couple of Python Notebooks, which are used for data preprocessing and evaluation.
 
 
+## Final Report
+
+The final project report is available here:
+[KNN_report.pdf](KNN_report.pdf)
+
 ## Docs
 
 Notes doc:
