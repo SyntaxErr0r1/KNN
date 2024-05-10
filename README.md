@@ -125,6 +125,20 @@ This refers to the ROUGE-RAW score when the target summary length is set to the 
 3s-txt to abs    14.1 23.8 17.1  02.7 04.6 03.3  09.5 16.4 11.6
 ```
 
+**csmpt7b**:
+```
+                  RougeRAW-1      RougeRAW-2      RougeRAW-L
+                  P    R    F     P    R    F     P    R    F
+0s-abs to hdln   12.9 17.7 13.6  04.2 05.8 04.6  11.9 15.6 12.2
+```
+
+
+**csmpt7b-finetuned**:
+```
+                  RougeRAW-1      RougeRAW-2      RougeRAW-L
+                  P    R    F     P    R    F     P    R    F
+0s-abs to hdln   12.1 24.0 15.4  03.9 08.1 05.2  10.8 21.7 13.8
+```
 
 **Theirs**: <br> 
 - abstract to headline
@@ -180,6 +194,21 @@ t2t       13.2 10.5 11.3  01.2 00.9 01.0  10.2 08.1 08.7
 0s-abs to hdln   19.17      07.83       17.28       17.21
 3s-abs to hdln   22.46      08.30       18.85       18.81
 3s-txt to abs    25.81      05.75       14.58       14.60
+```
+**csmpt7b**:
+```
+                Rouge-1    Rouge-2     Rouge-L    Rouge-Lsum
+                  F         F             F           F
+0s-abs to hdln   13.49      4.89        11.76       11.75
+```
+
+
+**csmpt7b-finetuned**:
+```
+                Rouge-1    Rouge-2     Rouge-L    Rouge-Lsum
+                  F         F             F           F
+0s-abs to hdln   16.15      6.83        13.67       13.73
+```
 
 
 #### **BertScore**
@@ -212,6 +241,21 @@ t2t       13.2 10.5 11.3  01.2 00.9 01.0  10.2 08.1 08.7
 3s-txt to abs    0.668   0.690  0.678
 ```
 
+**csmpt7b**:
+```
+                    BertScore
+                  P      R      F
+0s-abs to hdln   0.595  0.596  0.595
+```
+
+**csmpt7b-finetuned**:
+```
+                    BertScore
+                  P      R      F
+0s-abs to hdln   0.640  0.683  0.661
+```
+
+
 #### **BLEU**
 
 **Mistral-7b-instruct-v0.2**:                  
@@ -236,6 +280,18 @@ t2t       13.2 10.5 11.3  01.2 00.9 01.0  10.2 08.1 08.7
 0s-abs to hdln    0.018
 3s-abs to hdln    0.025
 3s-txt to abs     0.016
+```
+
+**csmpt7b**:
+```
+                  BLEU
+0s-abs to hdln    0.015
+```
+
+**csmpt7b-finetuned**:
+```
+                  BLEU
+0s-abs to hdln    0.016
 ```
 
 
@@ -263,6 +319,19 @@ t2t       13.2 10.5 11.3  01.2 00.9 01.0  10.2 08.1 08.7
 0s-abs to hdln   0.113
 3s-abs to hdln   0.134
 3s-txt to abs    0.170
+```
+
+**csmpt7b**:
+```
+                METEOR
+0s-abs to hdln   0.097
+```
+
+
+**csmpt7b-finetuned**:
+```
+                METEOR
+0s-abs to hdln   0.128
 ```
 
 

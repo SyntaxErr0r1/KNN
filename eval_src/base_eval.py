@@ -37,9 +37,14 @@ if __name__ == "__main__":
     # sumeczech_3shot_abstract_to_headline = json.load(open("data/sumeczech/eval_150samples_test_llama3-8b-ft/sumeczech_3shot_abstract_to_headline_llama3-ft.json"))
     # sumeczech_3shot_text_to_abstract = json.load(open("data/sumeczech/eval_150samples_test_llama3-8b-ft/sumeczech_3shot_text_to_abstract_llama3-ft.json"))
 
+    
+    # wrong format for czech models
+    refrences = [y for _, y in dict(sumeczech_0shot_abstract_to_headline["references"]).items()]
+    predictions = [y for _, y in dict(sumeczech_0shot_abstract_to_headline["predictions"]).items()]
+
     evaluators = get_all_evaluators()
 
-    abstract_to_headline_scores_0shot = benchmark_model(evaluators, sumeczech_0shot_abstract_to_headline["references"], sumeczech_0shot_abstract_to_headline["predictions"])
+    abstract_to_headline_scores_0shot = benchmark_model(evaluators, refrences, predictions)
     # abstract_to_headline_scores_3shot = benchmark_model(evaluators, sumeczech_3shot_abstract_to_headline["references"], sumeczech_3shot_abstract_to_headline["predictions"])
     # text_to_abstract_scores_3shot = benchmark_model(evaluators, sumeczech_3shot_text_to_abstract["references"], sumeczech_3shot_text_to_abstract["predictions"])
 
