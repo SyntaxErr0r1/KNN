@@ -33,21 +33,21 @@ def benchmark_model(evaluators: List[BaseEvaluator], references: List[str], pred
 
 if __name__ == "__main__":
     
-    sumeczech_0shot_abstract_to_headline = json.load(open("data/sumeczech/eval_150samples_test_mistral7b_v0.2/sumeczech_0shot_abstract-to-headline.json"))
-    sumeczech_3shot_abstract_to_headline = json.load(open("data/sumeczech/eval_150samples_test_mistral7b_v0.2/sumeczech_3shot_abstract-to-headline.json"))
-    sumeczech_3shot_text_to_abstract = json.load(open("data/sumeczech/eval_150samples_test_mistral7b_v0.2/sumeczech_3shot_text-to-abstract.json"))
+    sumeczech_0shot_abstract_to_headline = json.load(open("data/sumeczech/eval_150samples_test_csmpt7b/sumeczech_0shot_abstract-to-headline.json"))
+    # sumeczech_3shot_abstract_to_headline = json.load(open("data/sumeczech/eval_150samples_test_llama3-8b-ft/sumeczech_3shot_abstract_to_headline_llama3-ft.json"))
+    # sumeczech_3shot_text_to_abstract = json.load(open("data/sumeczech/eval_150samples_test_llama3-8b-ft/sumeczech_3shot_text_to_abstract_llama3-ft.json"))
 
     evaluators = get_all_evaluators()
 
     abstract_to_headline_scores_0shot = benchmark_model(evaluators, sumeczech_0shot_abstract_to_headline["references"], sumeczech_0shot_abstract_to_headline["predictions"])
-    abstract_to_headline_scores_3shot = benchmark_model(evaluators, sumeczech_3shot_abstract_to_headline["references"], sumeczech_3shot_abstract_to_headline["predictions"])
-    text_to_abstract_scores_3shot = benchmark_model(evaluators, sumeczech_3shot_text_to_abstract["references"], sumeczech_3shot_text_to_abstract["predictions"])
+    # abstract_to_headline_scores_3shot = benchmark_model(evaluators, sumeczech_3shot_abstract_to_headline["references"], sumeczech_3shot_abstract_to_headline["predictions"])
+    # text_to_abstract_scores_3shot = benchmark_model(evaluators, sumeczech_3shot_text_to_abstract["references"], sumeczech_3shot_text_to_abstract["predictions"])
 
     for metric_name, score in abstract_to_headline_scores_0shot.items():
         print(f"{metric_name}: {json.dumps(score, indent=4)}")
 
-    for metric_name, score in abstract_to_headline_scores_3shot.items():
-        print(f"{metric_name}: {json.dumps(score, indent=4)}")
+    # for metric_name, score in abstract_to_headline_scores_3shot.items():
+    #     print(f"{metric_name}: {json.dumps(score, indent=4)}")
 
-    for metric_name, score in text_to_abstract_scores_3shot.items():
-        print(f"{metric_name}: {json.dumps(score, indent=4)}")
+    # for metric_name, score in text_to_abstract_scores_3shot.items():
+    #     print(f"{metric_name}: {json.dumps(score, indent=4)}")
